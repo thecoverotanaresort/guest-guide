@@ -66,7 +66,7 @@
   .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; position: relative; }
   .hero-tagline { flex: 1; }
   .hero-tagline-text {
-    font-size: clamp(18px, 3.5vw, 38px);
+    font-size: clamp(22px, 4vw, 38px);
     font-weight: 600;
     color: var(--white);
     line-height: 1.3;
@@ -315,11 +315,11 @@ const SHEET_TABS = {
 
 const DINING_LINKS = {
   'Basilico Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
-  'Cinnamon Restaurant': 'https://www.rotana.com/thecoverotanaresort/dining/cinnamonalldaydining',
-  'Breeze Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breeze',
-  'Breakers Beach Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breakersonthebeach',
-  'Sunset Bar': 'https://www.rotana.com/thecoverotanaresort/dining/sunsetbar',
-  'Laguna Bay': 'https://www.rotana.com/thecoverotanaresort/dining/lagunabay',
+  'Cinnamon Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Breeze Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Breakers Beach Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Sunset Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Laguna Bay Café': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
 };
 
 function show(id, idx) {
@@ -359,33 +359,40 @@ async function fetchSheet(tabName) {
 }
 
 function renderDining(rows) {
-  const outlets = {};
-  rows.forEach(r => {
-    if (!r.Outlet) return;
-    if (!outlets[r.Outlet]) outlets[r.Outlet] = { type: r.Type || '', pill: r.Pill || '', pillStyle: r.PillStyle || 'pill-gold', rows: [] };
-    if (r.Label) outlets[r.Outlet].rows.push({ label: r.Label, value: r.Value });
+  var lastOutlet = '', lastType = '', lastPill = '', lastPillStyle = '';
+  rows = rows.map(function(r) {
+    if ((r['Outlet'] || '').trim() !== '') {
+      lastOutlet    = r['Outlet'].trim();
+      lastType      = (r['Type'] || '').trim();
+      lastPill      = (r['Pill'] || '').trim();
+      lastPillStyle = (r['PillStyle'] || '').trim();
+    }
+    return { Outlet: lastOutlet, Type: lastType, Pill: lastPill, PillStyle: lastPillStyle, Label: (r['Label'] || '').trim(), Value: (r['Value'] || '').trim() };
   });
-  const cards = Object.entries(outlets).map(([name, o]) => {
-    const link = DINING_LINKS[name];
-    const tag = link ? `a class="card clickable" href="${link}" target="_blank" rel="noopener"` : `div class="card"`;
-    const closeTag = link ? 'a' : 'div';
-    const extIcon = link ? `<span class="ext-icon">↗</span>` : '';
-    return `<${tag}>
-      <div class="card-header">
-        <div>
-          <div class="card-name card-name-link">${name}${extIcon}</div>
-          <div class="card-type">${o.type}</div>
-        </div>
-        ${o.pill ? `<span class="pill ${o.pillStyle}">${o.pill}</span>` : ''}
-      </div>
-      <div class="time-rows">
-        ${o.rows.map(r => `<div class="time-row"><span class="time-label">${r.label}</span><span class="time-val">${r.value}</span></div>`).join('')}
-      </div>
-    </${closeTag}>`;
+  var outlets = {}, order = [];
+  rows.forEach(function(r) {
+    if (!r.Outlet || !r.Label) return;
+    if (!outlets[r.Outlet]) { outlets[r.Outlet] = { type: r.Type, pill: r.Pill, pillStyle: r.PillStyle || 'pill-gold', rows: [] }; order.push(r.Outlet); }
+    outlets[r.Outlet].rows.push({ label: r.Label, value: r.Value });
+  });
+  var DINING_LINKS = {
+    'Basilico Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
+    'Cinnamon Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Breeze Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Breakers Beach Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Sunset Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Laguna Bay Café': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining'
+  };
+  var cards = order.map(function(name) {
+    var o = outlets[name];
+    var link = DINING_LINKS[name];
+    var tag = link ? 'a class="card clickable" href="' + link + '" target="_blank" rel="noopener"' : 'div class="card"';
+    var closeTag = link ? 'a' : 'div';
+    var extIcon = link ? '<span class="ext-icon">↗</span>' : '';
+    return '<' + tag + '><div class="card-header"><div><div class="card-name card-name-link">' + name + extIcon + '</div><div class="card-type">' + o.type + '</div></div>' + (o.pill ? '<span class="pill ' + o.pillStyle + '">' + o.pill + '</span>' : '') + '</div><div class="time-rows">' + o.rows.map(function(r) { return '<div class="time-row"><span class="time-label">' + r.label + '</span><span class="time-val">' + r.value + '</span></div>'; }).join('') + '</div></' + closeTag + '>';
   }).join('');
-  return `<div class="sec-head">Dining &amp; <span>Bars</span></div><div class="card-grid">${cards}</div>`;
+  return '<div class="sec-head">Dining &amp; <span>Bars</span></div><div class="card-grid">' + cards + '</div>';
 }
-
 function renderOffers(rows) {
   return `<div class="sec-head">Exclusive <span>Offers</span></div>` +
     rows.filter(r => r.Title).map(r => `
@@ -401,70 +408,34 @@ function renderOffers(rows) {
 }
 
 function renderPackages(rows) {
-  var dataRows = rows.filter(function(r) {
-    return (r['Restaurant'] || '').trim() !== '' && (r['Meal Period'] || '').trim() !== '';
-  });
-  var infoRows = rows.filter(function(r) {
-    return (r['Restaurant'] || '').toString().trim().charAt(0) === '\u2022';
-  });
-  var restaurants = [];
-  var seen = {};
-  dataRows.forEach(function(r) {
-    var name = (r['Restaurant'] || '').trim();
-    if (name && !seen[name]) { seen[name] = true; restaurants.push(name); }
-  });
+  var dataRows = rows.filter(function(r) { return (r['Restaurant'] || '').trim() !== '' && (r['Meal Period'] || '').trim() !== ''; });
+  var infoRows = rows.filter(function(r) { return (r['Restaurant'] || '').toString().trim().charAt(0) === '•'; });
+  var restaurants = [], seen = {};
+  dataRows.forEach(function(r) { var name = (r['Restaurant'] || '').trim(); if (name && !seen[name]) { seen[name] = true; restaurants.push(name); } });
   function renderCell(val) {
     val = (val || '').trim();
-    if (!val || val.toUpperCase() === 'FALSE') return '<td class="pkg-cross">\u2014</td>';
-    if (val.toUpperCase() === 'TRUE') return '<td class="pkg-check">\u2713</td>';
+    if (!val || val.toUpperCase() === 'FALSE') return '<td class="pkg-cross">—</td>';
+    if (val.toUpperCase() === 'TRUE') return '<td class="pkg-check">✓</td>';
     if (val.toUpperCase() === 'CHARGEABLE') return '<td class="pkg-charge">CHARGED</td>';
     return '<td class="pkg-custom"><span>' + val + '</span></td>';
   }
   var tableRows = restaurants.map(function(name) {
     var group = dataRows.filter(function(r) { return (r['Restaurant'] || '').trim() === name; });
     var hours = (group[0]['Operating Hours'] || '').trim();
-    var restRow = '<tr class="pkg-restaurant-row">'
-      + '<td class="pkg-col-sticky"><strong>' + name + '</strong>'
-      + (hours ? '<div class="pkg-hours">' + hours + '</div>' : '') + '</td>'
-      + '<td colspan="4"></td></tr>';
-    var dataHtml = group.map(function(r) {
-      return '<tr>'
-        + '<td class="pkg-col-sticky pkg-meal">' + (r['Meal Period'] || '').trim() + '</td>'
-        + '<td class="pkg-time">' + (r['Time'] || '').trim() + '</td>'
-        + '<td class="pkg-desc">' + (r['Description'] || '').trim() + '</td>'
-        + renderCell((r['AI'] || '').trim())
-        + renderCell((r['UAI'] || '').trim())
-        + '</tr>';
-    }).join('');
+    var restRow = '<tr class="pkg-restaurant-row"><td class="pkg-col-sticky"><strong>' + name + '</strong>' + (hours ? '<div class="pkg-hours">' + hours + '</div>' : '') + '</td><td colspan="4"></td></tr>';
+    var dataHtml = group.map(function(r) { return '<tr><td class="pkg-col-sticky pkg-meal">' + (r['Meal Period'] || '').trim() + '</td><td class="pkg-time">' + (r['Time'] || '').trim() + '</td><td class="pkg-desc">' + (r['Description'] || '').trim() + '</td>' + renderCell((r['AI'] || '').trim()) + renderCell((r['UAI'] || '').trim()) + '</tr>'; }).join('');
     return restRow + dataHtml;
   }).join('');
-  var infoHtml = infoRows.length
-    ? '<div class="pkg-info-box"><div class="pkg-info-title">\u26a0\ufe0f Important Information</div>'
-      + infoRows.map(function(r) {
-          return '<div class="pkg-info-item">' + (r['Restaurant'] || '').trim().replace(/^\u2022\s*/, '') + '</div>';
-        }).join('')
-      + '</div>'
-    : '';
+  var infoHtml = infoRows.length ? '<div class="pkg-info-box"><div class="pkg-info-title">⚠️ Important Information</div>' + infoRows.map(function(r) { return '<div class="pkg-info-item">' + (r['Restaurant'] || '').trim().replace(/^• */, '') + '</div>'; }).join('') + '</div>' : '';
   return '<div class="sec-head">Meal <span>Packages</span></div>'
     + '<div style="background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);margin-bottom:.875rem;overflow:hidden">'
     + '<div id="pkgHint" style="display:flex;align-items:center;justify-content:flex-end;gap:5px;font-size:11px;color:var(--text-light);padding:5px 12px;background:var(--sand);border-bottom:1px solid var(--sand-dark);transition:opacity 0.3s">Slide for more <span style="display:inline-block;animation:pkgnudge 1.2s ease-in-out infinite">&#8250;&#8250;</span></div>'
     + '<div id="pkgScroll" onscroll="pkgScroll(this)" style="overflow-x:auto;-webkit-overflow-scrolling:touch">'
     + '<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:520px;background:var(--white)">'
-    + '<thead><tr style="background:#0e5a92">'
-    + '<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#0e5a92;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th>'
-    + '<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th>'
-    + '<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left">Description</th>'
-    + '<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:center;background:#1a6fb5;min-width:60px">AI</th>'
-    + '<th style="padding:.65rem .875rem;font-weight:500;font-size:12px;text-align:center;background:#c9a84c;color:#1a3d2b;min-width:60px">UAI</th>'
-    + '</tr></thead>'
-    + '<tbody>' + tableRows + '</tbody>'
-    + '</table></div></div>'
-    + infoHtml;
+    + '<thead><tr style="background:#0e5a92"><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#0e5a92;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left">Description</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:center;background:#1a6fb5;min-width:60px">AI</th><th style="padding:.65rem .875rem;font-weight:500;font-size:12px;text-align:center;background:#c9a84c;color:#1a3d2b;min-width:60px">UAI</th></tr></thead>'
+    + '<tbody>' + tableRows + '</tbody></table></div></div>' + infoHtml;
 }
-function pkgScroll(el) {
-  var hint = document.getElementById('pkgHint');
-  if (hint) hint.style.opacity = el.scrollLeft > 20 ? '0' : '1';
-}
+function pkgScroll(el) { var hint = document.getElementById('pkgHint'); if (hint) hint.style.opacity = el.scrollLeft > 20 ? '0' : '1'; }
 function renderActivities(rows) {
   return `<div class="sec-head">Daily <span>Activities</span></div>
     <div class="act-timeline">
@@ -513,8 +484,8 @@ function renderResort(rows) {
     <div class="contact-band">
       <div class="dial-zero">0</div>
       <div>
-        <div class="contact-text-title">Thank You for Choosing Us</div>
-        <div class="contact-text-sub">Dial “0” to connect with our team for any assistance you may require.</div>
+        <div class="contact-text-title">Need anything?</div>
+        <div class="contact-text-sub">Dial 0 from your room — our team is available 24/7.</div>
       </div>
     </div>`;
 }
