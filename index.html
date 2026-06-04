@@ -401,36 +401,33 @@ function renderOffers(rows) {
 }
 
 function renderPackages(rows) {
-  const dataRows = rows.filter(r => {
-    const rest = (r['Restaurant'] || '').trim();
-    const meal = (r['Meal Period'] || '').trim();
-    return rest !== '' && meal !== '';
+  var dataRows = rows.filter(function(r) {
+    return (r['Restaurant'] || '').trim() !== '' && (r['Meal Period'] || '').trim() !== '';
   });
-  const infoRows = rows.filter(r => {
-    const first = (r['Restaurant'] || '').toString().trim();
-    return first.startsWith('•');
+  var infoRows = rows.filter(function(r) {
+    return (r['Restaurant'] || '').toString().trim().charAt(0) === '\u2022';
   });
-  const restaurants = [];
-  const seen = {};
-  dataRows.forEach(r => {
-    const name = (r['Restaurant'] || '').trim();
+  var restaurants = [];
+  var seen = {};
+  dataRows.forEach(function(r) {
+    var name = (r['Restaurant'] || '').trim();
     if (name && !seen[name]) { seen[name] = true; restaurants.push(name); }
   });
   function renderCell(val) {
     val = (val || '').trim();
-    if (!val || val.toUpperCase() === 'FALSE') return '<td class="pkg-cross">—</td>';
-    if (val.toUpperCase() === 'TRUE') return '<td class="pkg-check">✓</td>';
+    if (!val || val.toUpperCase() === 'FALSE') return '<td class="pkg-cross">\u2014</td>';
+    if (val.toUpperCase() === 'TRUE') return '<td class="pkg-check">\u2713</td>';
     if (val.toUpperCase() === 'CHARGEABLE') return '<td class="pkg-charge">CHARGED</td>';
     return '<td class="pkg-custom"><span>' + val + '</span></td>';
   }
-  const tableRows = restaurants.map(name => {
-    const group = dataRows.filter(r => (r['Restaurant'] || '').trim() === name);
-    const hours = (group[0]['Operating Hours'] || '').trim();
-    const restRow = '<tr class="pkg-restaurant-row">'
+  var tableRows = restaurants.map(function(name) {
+    var group = dataRows.filter(function(r) { return (r['Restaurant'] || '').trim() === name; });
+    var hours = (group[0]['Operating Hours'] || '').trim();
+    var restRow = '<tr class="pkg-restaurant-row">'
       + '<td class="pkg-col-sticky"><strong>' + name + '</strong>'
       + (hours ? '<div class="pkg-hours">' + hours + '</div>' : '') + '</td>'
       + '<td colspan="4"></td></tr>';
-    const dataHtml = group.map(r => {
+    var dataHtml = group.map(function(r) {
       return '<tr>'
         + '<td class="pkg-col-sticky pkg-meal">' + (r['Meal Period'] || '').trim() + '</td>'
         + '<td class="pkg-time">' + (r['Time'] || '').trim() + '</td>'
@@ -441,15 +438,17 @@ function renderPackages(rows) {
     }).join('');
     return restRow + dataHtml;
   }).join('');
-  const infoHtml = infoRows.length
-    ? '<div class="pkg-info-box"><div class="pkg-info-title">⚠️ Important Information</div>'
-      + infoRows.map(r => '<div class="pkg-info-item">' + (r['Restaurant'] || '').trim().replace(/^•\s*/, '') + '</div>').join('')
+  var infoHtml = infoRows.length
+    ? '<div class="pkg-info-box"><div class="pkg-info-title">\u26a0\ufe0f Important Information</div>'
+      + infoRows.map(function(r) {
+          return '<div class="pkg-info-item">' + (r['Restaurant'] || '').trim().replace(/^\u2022\s*/, '') + '</div>';
+        }).join('')
       + '</div>'
     : '';
   return '<div class="sec-head">Meal <span>Packages</span></div>'
     + '<div style="background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);margin-bottom:.875rem;overflow:hidden">'
     + '<div id="pkgHint" style="display:flex;align-items:center;justify-content:flex-end;gap:5px;font-size:11px;color:var(--text-light);padding:5px 12px;background:var(--sand);border-bottom:1px solid var(--sand-dark);transition:opacity 0.3s">Slide for more <span style="display:inline-block;animation:pkgnudge 1.2s ease-in-out infinite">&#8250;&#8250;</span></div>'
-    + '<div style="overflow-x:auto;-webkit-overflow-scrolling:touch" onscroll="var h=document.getElementById('pkgHint');if(h)h.style.opacity=this.scrollLeft>20?'0':'1'">'
+    + '<div id="pkgScroll" onscroll="pkgScroll(this)" style="overflow-x:auto;-webkit-overflow-scrolling:touch">'
     + '<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:520px;background:var(--white)">'
     + '<thead><tr style="background:#0e5a92">'
     + '<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#0e5a92;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th>'
@@ -461,6 +460,10 @@ function renderPackages(rows) {
     + '<tbody>' + tableRows + '</tbody>'
     + '</table></div></div>'
     + infoHtml;
+}
+function pkgScroll(el) {
+  var hint = document.getElementById('pkgHint');
+  if (hint) hint.style.opacity = el.scrollLeft > 20 ? '0' : '1';
 }
 function renderActivities(rows) {
   return `<div class="sec-head">Daily <span>Activities</span></div>
