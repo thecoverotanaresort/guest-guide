@@ -66,15 +66,15 @@
   .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; position: relative; }
   .hero-tagline { flex: 1; }
   .hero-tagline-text {
-    font-size: clamp(18px, 3.5vw, 38px);
+    font-size: clamp(22px, 4vw, 38px);
     font-weight: 600;
     color: var(--white);
     line-height: 1.3;
     letter-spacing: -0.3px;
   }
   .font-rotana { font-family: 'Rotana', serif; font-weight: normal; }
-  .font-minerva-it { font-family: 'MinervaModernIt', serif; color: var(--gold-light); }
-  .hero-tagline-text em { color: var(--gold-light); font-style: italic; }
+  .font-minerva-it { font-family: 'MinervaModernIt', serif; color: var(--white); }
+  .hero-tagline-text em { color: var(--white); font-style: italic; }
   .hero-tagline-sub { font-family: Arial, sans-serif;
     font-size: clamp(11px, 1.5vw, 14px);
     color: rgba(255,255,255,.6);
@@ -111,7 +111,7 @@
   .section.active { display: block; }
   @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
-  .sec-head { font-family: 'MinervaModernBd', serif; font-size: clamp(24px, 3vw, 32px); font-weight: 500; color: var(--forest); margin-bottom: 1.25rem; margin-top: .25rem; }
+  .sec-head { font-family: 'MinervaModernBd', serif; font-size: clamp(24px, 3vw, 32px); font-weight: 500; color: #0e5a92; margin-bottom: 1.25rem; margin-top: .25rem; } .sec-head span { color: #0e5a92; font-style: normal; }
   .sec-head span { color: var(--gold); font-style: italic; }
 
   /* ── CARD GRID (desktop) ── */
@@ -242,13 +242,13 @@
 
   @keyframes pkgnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
   .pkg-col-sticky{position:sticky;left:0;z-index:2;background:var(--white);border-right:2px solid var(--sand-dark);min-width:130px}
-  .pkg-restaurant-row td{background:#ddeeff !important;color:#0e5a92;font-weight:500;border-top:2px solid #b8d4f0;padding:7px 12px}
-  .pkg-restaurant-row td.pkg-col-sticky{background:#ddeeff !important}
-  .pkg-hours{font-size:11px;color:#5a8ab0;font-weight:400}
+  .pkg-restaurant-row td{background:#e8f4ec !important;color:#4E8C5E;font-weight:500;border-top:2px solid #b2d4be;padding:7px 12px}
+  .pkg-restaurant-row td.pkg-col-sticky{background:#e8f4ec !important}
+  .pkg-hours{font-size:11px;color:#4E8C5E;font-weight:400;opacity:.8}
   .pkg-time,.pkg-desc,.pkg-meal,.pkg-check,.pkg-cross,.pkg-charge,.pkg-custom{padding:.55rem .875rem}
   .pkg-time{color:var(--text-mid);font-size:12px;white-space:nowrap}
   .pkg-desc{color:var(--text-mid);font-size:12px}
-  .pkg-check{text-align:center;font-size:15px;color:#1d9e75}
+  .pkg-check{text-align:center;font-size:15px;color:#4E8C5E}
   .pkg-cross{text-align:center;color:#ccc}
   .pkg-charge{text-align:center;font-size:10px;font-weight:600;color:#c0392b}
   .pkg-custom{text-align:center}
@@ -263,7 +263,7 @@
 <div class="hero">
   <div class="hero-top">
     <div class="hero-tagline">
-      <div class="hero-tagline-text"><span class="font-rotana">Your complete guide to</span><br><span class="font-minerva-it">an unforgettable stay</span></div>
+      <div class="hero-tagline-text"><span class="font-rotana">Your complete guide to an</span><br><span class="font-minerva-it">extraordinary stay</span></div>
     </div>
     <div class="hero-logo-wrap">
       <a href="https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort" target="_blank" rel="noopener">
@@ -314,12 +314,12 @@ const SHEET_TABS = {
 };
 
 const DINING_LINKS = {
-  'Basilico': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
-  'Cinnamon': 'https://www.rotana.com/thecoverotanaresort/dining/cinnamonalldaydining',
-  'Breeze Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breeze',
-  'Breakers Beach Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breakersonthebeach',
-  'Sunset Bar': 'https://www.rotana.com/thecoverotanaresort/dining/sunsetbar',
-  'Laguna Bay': 'https://www.rotana.com/thecoverotanaresort/dining/lagunabay',
+  'Basilico Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
+  'Cinnamon Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Breeze Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Breakers Beach Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Sunset Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Laguna Bay Café': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
 };
 
 function show(id, idx) {
@@ -376,12 +376,12 @@ function renderDining(rows) {
     outlets[r.Outlet].rows.push({ label: r.Label, value: r.Value });
   });
   var DINING_LINKS = {
-    'Basilico': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
-    'Cinnamon': 'https://www.rotana.com/thecoverotanaresort/dining/cinnamonalldaydining',
-    'Breeze Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breeze',
-    'Breakers Beach Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breakersonthebeach',
-    'Sunset Bar': 'https://www.rotana.com/thecoverotanaresort/dining/sunsetbar',
-    'Laguna Bay': 'https://www.rotana.com/thecoverotanaresort/dining/lagunabay',
+    'Basilico Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
+    'Cinnamon Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Breeze Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Breakers Beach Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Sunset Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Laguna Bay Café': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining'
   };
   var cards = order.map(function(name) {
     var o = outlets[name];
@@ -484,8 +484,8 @@ function renderResort(rows) {
     <div class="contact-band">
       <div class="dial-zero">0</div>
       <div>
-        <div class="contact-text-title">Thank You for Choosing Us</div>
-        <div class="contact-text-sub">Dial “0” to reach our Team for any assistance or enquiry.</div>
+        <div class="contact-text-title">Need anything?</div>
+        <div class="contact-text-sub">Dial 0 from your room — our team is available 24/7.</div>
       </div>
     </div>`;
 }
