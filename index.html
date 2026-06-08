@@ -263,7 +263,7 @@
 <div class="hero">
   <div class="hero-top">
     <div class="hero-tagline">
-      <div class="hero-tagline-text"><span class="font-rotana">Your complete guide to an</span><br><span class="font-minerva-it">extraordinary stay</span></div>
+      <div class="hero-tagline-text"><span class="font-rotana">Your complete guide to</span><br><span class="font-minerva-it">an extraordinary stay</span></div>
     </div>
     <div class="hero-logo-wrap">
       <a href="https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort" target="_blank" rel="noopener">
@@ -314,12 +314,12 @@ const SHEET_TABS = {
 };
 
 const DINING_LINKS = {
-  'Basilico Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
-  'Cinnamon Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-  'Breeze Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-  'Breakers Beach Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-  'Sunset Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-  'Laguna Bay Café': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+  'Basilico': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
+  'Cinnamon': 'https://www.rotana.com/thecoverotanaresort/dining/cinnamonalldaydining',
+  'Breeze Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breeze',
+  'Breakers Beach Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breakersonthebeach',
+  'Sunset Bar': 'https://www.rotana.com/thecoverotanaresort/dining/sunsetbar',
+  'Laguna Bay': 'https://www.rotana.com/thecoverotanaresort/dining/lagunabay',
 };
 
 function show(id, idx) {
@@ -376,12 +376,12 @@ function renderDining(rows) {
     outlets[r.Outlet].rows.push({ label: r.Label, value: r.Value });
   });
   var DINING_LINKS = {
-    'Basilico Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
-    'Cinnamon Restaurant': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-    'Breeze Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-    'Breakers Beach Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-    'Sunset Bar': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
-    'Laguna Bay Café': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining'
+  'Basilico': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
+  'Cinnamon': 'https://www.rotana.com/thecoverotanaresort/dining/cinnamonalldaydining',
+  'Breeze Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breeze',
+  'Breakers Beach Bar & Lounge': 'https://www.rotana.com/thecoverotanaresort/dining/breakersonthebeach',
+  'Sunset Bar': 'https://www.rotana.com/thecoverotanaresort/dining/sunsetbar',
+  'Laguna Bay': 'https://www.rotana.com/thecoverotanaresort/dining/lagunabay'
   };
   var cards = order.map(function(name) {
     var o = outlets[name];
