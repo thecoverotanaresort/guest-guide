@@ -111,7 +111,7 @@
   .section.active { display: block; }
   @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
-  .sec-head { font-family: 'MinervaModernBd', serif; font-size: clamp(24px, 3vw, 32px); font-weight: 500; color: #0e5a92; margin-bottom: 1.25rem; margin-top: .25rem; } .sec-head span { color: #0e5a92; font-style: normal; }
+  .sec-head { font-family: 'MinervaModernBd', serif; font-size: clamp(24px, 3vw, 32px); font-weight: 500; color: #0e5a92; margin-bottom: 1.25rem; margin-top: .25rem; }
   .sec-head span { color: var(--gold); font-style: italic; }
 
   /* ── CARD GRID (desktop) ── */
@@ -391,10 +391,10 @@ function renderDining(rows) {
     var extIcon = link ? '<span class="ext-icon">↗</span>' : '';
     return '<' + tag + '><div class="card-header"><div><div class="card-name card-name-link">' + name + extIcon + '</div><div class="card-type">' + o.type + '</div></div>' + (o.pill ? '<span class="pill ' + o.pillStyle + '">' + o.pill + '</span>' : '') + '</div><div class="time-rows">' + o.rows.map(function(r) { return '<div class="time-row"><span class="time-label">' + r.label + '</span><span class="time-val">' + r.value + '</span></div>'; }).join('') + '</div></' + closeTag + '>';
   }).join('');
-  return '<div class="sec-head">Dining &amp; <span>Bars</span></div><div class="card-grid">' + cards + '</div>';
+  return '<div class="sec-head">Dining &amp; Bars</div><div class="card-grid">' + cards + '</div>';
 }
 function renderOffers(rows) {
-  return `<div class="sec-head">Exclusive <span>Offers</span></div>` +
+  return `<div class="sec-head">Exclusive Offers</div>` +
     rows.filter(r => r.Title).map(r => `
       <div class="offer-card">
         <div class="offer-icon">${r.Icon || '🎁'}</div>
@@ -427,7 +427,7 @@ function renderPackages(rows) {
     return restRow + dataHtml;
   }).join('');
   var infoHtml = infoRows.length ? '<div class="pkg-info-box"><div class="pkg-info-title">⚠️ Important Information</div>' + infoRows.map(function(r) { return '<div class="pkg-info-item">' + (r['Restaurant'] || '').trim().replace(/^• */, '') + '</div>'; }).join('') + '</div>' : '';
-  return '<div class="sec-head">Meal <span>Packages</span></div>'
+  return '<div class="sec-head">Meal Packages</div>'
     + '<div style="background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);margin-bottom:.875rem;overflow:hidden">'
     + '<div id="pkgHint" style="display:flex;align-items:center;justify-content:flex-end;gap:5px;font-size:11px;color:var(--text-light);padding:5px 12px;background:var(--sand);border-bottom:1px solid var(--sand-dark);transition:opacity 0.3s">Slide for more <span style="display:inline-block;animation:pkgnudge 1.2s ease-in-out infinite">&#8250;&#8250;</span></div>'
     + '<div id="pkgScroll" onscroll="pkgScroll(this)" style="overflow-x:auto;-webkit-overflow-scrolling:touch">'
@@ -437,7 +437,7 @@ function renderPackages(rows) {
 }
 function pkgScroll(el) { var hint = document.getElementById('pkgHint'); if (hint) hint.style.opacity = el.scrollLeft > 20 ? '0' : '1'; }
 function renderActivities(rows) {
-  return `<div class="sec-head">Daily <span>Activities</span></div>
+  return `<div class="sec-head">Daily Activities</div>
     <div class="act-timeline">
       ${rows.filter(r => r.Activity).map(r => `
         <div class="act-item">
@@ -451,7 +451,7 @@ function renderActivities(rows) {
 }
 
 function renderEntertainment(rows) {
-  return `<div class="sec-head">Nightly <span>Entertainment</span></div>
+  return `<div class="sec-head">Nightly Entertainment</div>
     <div class="ent-card">
       ${rows.filter(r => r.Name).map(r => `
         <div class="ent-item">
@@ -472,7 +472,7 @@ function renderResort(rows) {
     if (!grouped[r.Category]) grouped[r.Category] = { icon: r.Icon || '📍', items: [] };
     if (r.Item) grouped[r.Category].items.push(r.Item);
   });
-  return `<div class="sec-head">Resort <span>Map</span></div>
+  return `<div class="sec-head">Resort Map</div>
     <div class="resort-grid">
       ${Object.entries(grouped).map(([cat, g]) => `
         <div class="resort-mini-card">
