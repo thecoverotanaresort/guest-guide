@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="theme-color" content="#0e5a92">
+<meta name="theme-color" content="#A07540">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="The Cove Rotana">
@@ -42,7 +42,7 @@
     font-style: normal;
   }
   :root {
-    --forest: #0e5a92;
+    --forest: #A07540;
     --forest-mid: #1a7abf;
     --forest-light: #5aaee0;
     --sand: #f5f0e8;
@@ -215,7 +215,7 @@
   /* ── PACKAGES TABLE ── */
   .pkg-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius); box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04); margin-bottom: 1rem; }
   .pkg-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
-  .pkg-table thead tr { background: #0e5a92; }
+  .pkg-table thead tr { background: #A07540; }
   .pkg-table thead th { padding: .65rem .875rem; color: #fff; font-family: 'MinervaModernRg', serif; font-weight: normal; font-size: 12px; text-align: left; letter-spacing: .3px; white-space: nowrap; border-right: 1px solid rgba(255,255,255,.15); }
   .pkg-table thead th:last-child, .pkg-table thead th:nth-last-child(2) { text-align: center; }
   .pkg-table tbody tr { border-bottom: 1px solid #e8e0d0; transition: background .15s; }
@@ -432,7 +432,7 @@ function renderPackages(rows) {
     + '<div id="pkgHint" style="display:flex;align-items:center;justify-content:flex-end;gap:5px;font-size:11px;color:var(--text-light);padding:5px 12px;background:var(--sand);border-bottom:1px solid var(--sand-dark);transition:opacity 0.3s">Slide for more <span style="display:inline-block;animation:pkgnudge 1.2s ease-in-out infinite">&#8250;&#8250;</span></div>'
     + '<div id="pkgScroll" onscroll="pkgScroll(this)" style="overflow-x:auto;-webkit-overflow-scrolling:touch">'
     + '<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:520px;background:var(--white)">'
-    + '<thead><tr style="background:#0e5a92"><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#0e5a92;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left">Description</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:center;background:#1a6fb5;min-width:60px">AI</th><th style="padding:.65rem .875rem;font-weight:500;font-size:12px;text-align:center;background:#c9a84c;color:#1a3d2b;min-width:60px">UAI</th></tr></thead>'
+    + '<thead><tr style="background:#A07540"><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#A07540;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left">Description</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:center;background:#1a6fb5;min-width:60px">AI</th><th style="padding:.65rem .875rem;font-weight:500;font-size:12px;text-align:center;background:#c9a84c;color:#1a3d2b;min-width:60px">UAI</th></tr></thead>'
     + '<tbody>' + tableRows + '</tbody></table></div></div>' + infoHtml;
 }
 function pkgScroll(el) { var hint = document.getElementById('pkgHint'); if (hint) hint.style.opacity = el.scrollLeft > 20 ? '0' : '1'; }
@@ -490,7 +490,7 @@ function renderResort(rows) {
     + "<div style=\"background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);overflow:hidden;margin-bottom:.875rem\">"
     + "<a href=\"" + pdfUri + "\" target=\"_blank\" download=\"CoveRotana_ResortMap.pdf\" style=\"display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;text-decoration:none;border-bottom:1px solid var(--sand-dark)\">"
     + "<div style=\"display:flex;align-items:center;gap:.75rem\">"
-    + "<div style=\"width:42px;height:42px;border-radius:10px;background:#0e5a92;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0\">🗺</div>"
+    + "<div style=\"width:42px;height:42px;border-radius:10px;background:#A07540;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0\">🗺</div>"
     + "<div><div style=\"font-size:15px;font-weight:500;color:#0e5a92\">Resort Map PDF</div>"
     + "<div style=\"font-size:12px;color:var(--text-mid);margin-top:2px\">Tap to open · pinch to zoom</div></div></div>"
     + "<div style=\"font-size:22px;color:#0e5a92\">&#8599;</div></a>"
