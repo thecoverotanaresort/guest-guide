@@ -105,7 +105,7 @@
   .section.active { display: block; }
   @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
 
-  .sec-head { font-family: 'MinervaModernBd', serif; font-size: clamp(24px, 3vw, 32px); font-weight: 500; color: #0e5a92; margin-bottom: 1.25rem; margin-top: .25rem; }
+  .sec-head { font-family: 'MinervaModernBd', serif; font-size: clamp(24px, 3vw, 32px); font-weight: 500; color: #3D2509; margin-bottom: 1.25rem; margin-top: .25rem; }
   .sec-head span { color: var(--gold); font-style: italic; }
 
   /* ── CARD GRID (desktop) ── */
@@ -156,7 +156,7 @@
   .act-timeline { position: relative; padding-left: 28px; }
   .act-timeline::before { display: none; }
   .act-item { position: relative; margin-bottom: .875rem; }
-  .act-dot { position: absolute; left: -23px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #0e5a92; border: 2px solid var(--sand); box-shadow: 0 0 0 1.5px #0e5a92; z-index: 1; }
+  .act-dot { position: absolute; left: -23px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #3D2509; border: 2px solid var(--sand); box-shadow: 0 0 0 1.5px #3D2509; z-index: 1; }
   .act-card { background: var(--white); border-radius: var(--radius-sm); padding: .75rem 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
   .act-name { font-size: 14px; font-weight: 500; }
   .act-loc  { font-family: Arial, sans-serif; font-size: 12px; color: var(--text-light); margin-top: 1px; }
@@ -219,7 +219,7 @@
   .pkg-restaurant-row td:first-child { font-family: 'MinervaModernRg', serif; font-size: 13.5px; color: #A07540; font-weight: 500; }
   .pkg-restaurant-row { background: #FAF0E6 !important; }
   .pkg-restaurant-row td { border-top: 2px solid #c5d8ed; }
-  .pkg-hours { font-size: 11px; color: #7a9ab8; }
+  .pkg-hours { font-size: 11px; color: #A07540; font-weight: 400; opacity: .8; }
   .pkg-meal { font-weight: 500; color: #1c1c1c; }
   .pkg-desc { color: #5a5a5a; font-size: 12px; }
   .pkg-check { text-align: center; font-size: 16px; color: #1d9e75; }
@@ -238,7 +238,7 @@
   .pkg-col-sticky{position:sticky;left:0;z-index:2;background:var(--white);border-right:2px solid var(--sand-dark);min-width:130px}
   .pkg-restaurant-row td{background:#FAF0E6 !important;color:#A07540;font-weight:500;border-top:2px solid #e8d5b8;padding:7px 12px}
   .pkg-restaurant-row td.pkg-col-sticky{background:#FAF0E6 !important}
-  .pkg-hours{font-size:11px;color:#4E8C5E;font-weight:400;opacity:.8}
+  .pkg-hours { font-size: 11px; color: #A07540; font-weight: 400; opacity: .8; }
   .pkg-time,.pkg-desc,.pkg-meal,.pkg-check,.pkg-cross,.pkg-charge,.pkg-custom{padding:.55rem .875rem}
   .pkg-time{color:var(--text-mid);font-size:12px;white-space:nowrap}
   .pkg-desc{color:var(--text-mid);font-size:12px}
@@ -436,7 +436,7 @@ function renderPackages(rows) {
     + '<div id="pkgHint" style="display:flex;align-items:center;justify-content:flex-end;gap:5px;font-size:11px;color:var(--text-light);padding:5px 12px;background:var(--sand);border-bottom:1px solid var(--sand-dark);transition:opacity 0.3s">Slide for more <span style="display:inline-block;animation:pkgnudge 1.2s ease-in-out infinite">&#8250;&#8250;</span></div>'
     + '<div id="pkgScroll" onscroll="pkgScroll(this)" style="overflow-x:auto;-webkit-overflow-scrolling:touch">'
     + '<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:520px;background:var(--white)">'
-    + '<thead><tr style="background:#A07540"><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#A07540;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left">Description</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:center;background:#1a6fb5;min-width:60px">AI</th><th style="padding:.65rem .875rem;font-weight:500;font-size:12px;text-align:center;background:#c9a84c;color:#1a3d2b;min-width:60px">UAI</th></tr></thead>'
+    + '<thead><tr style="background:#A07540"><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#A07540;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left">Description</th><th style="padding:.65rem .875rem;font-weight:600;font-size:12px;text-align:center;background:linear-gradient(135deg,#B8860B,#DAA520,#F0D060,#DAA520,#B8860B);color:#fff;min-width:60px">AI</th><th style="padding:.65rem .875rem;font-weight:600;font-size:12px;text-align:center;background:linear-gradient(135deg,#8a9099,#BCC2C8,#E2E6EA,#BCC2C8,#8a9099);color:#2a2a2a;min-width:60px">UAI</th></tr></thead>'
     + '<tbody>' + tableRows + '</tbody></table></div></div>' + infoHtml;
 }
 function pkgScroll(el) { var hint = document.getElementById('pkgHint'); if (hint) hint.style.opacity = el.scrollLeft > 20 ? '0' : '1'; }
