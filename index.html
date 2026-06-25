@@ -354,7 +354,7 @@ function parseCSV(text) {
 }
 
 async function fetchSheet(tabName) {
-  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tabName)}`;
+  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/1vjIGBzpVH8yjkdTcKRH1odlJqQP6pDUQ4YPgeWiIwao/edit=${encodeURIComponent(tabName)}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const text = await res.text();
