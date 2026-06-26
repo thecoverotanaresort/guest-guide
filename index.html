@@ -439,7 +439,7 @@ function renderPackages(rows) {
     val = (val || '').trim();
     if (!val || val.toUpperCase() === 'FALSE') return '<td class="pkg-cross">—</td>';
     if (val.toUpperCase() === 'TRUE') return '<td class="pkg-check">✓</td>';
-    if (val.toUpperCase() === 'CHARGEABLE') return '<td class="pkg-charge">CHARGED</td>';
+    if (val.toUpperCase() === 'CHARGEABLE') return '<td class="pkg-charge">Chargeable</td>';
     return '<td class="pkg-custom"><span>' + val + '</span></td>';
   }
   var tableRows = restaurants.map(function(name) {
