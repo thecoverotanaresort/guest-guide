@@ -65,7 +65,7 @@
 
   .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; position: relative; }
   .hero-tagline { flex: 1; }
-  .hero-tagline-text { font-family: 'Rotana', serif; font-size: clamp(13px, 5.5vw, 32px); font-weight: 400; color: var(--white); line-height: 1.3; letter-spacing: -0.3px; }
+  .hero-tagline-text { font-family: 'Rotana', serif; font-size: clamp(13px, 2.5vw, 32px); font-weight: 400; color: var(--white); line-height: 1.3; letter-spacing: -0.3px; }
   .font-rotana { font-family: 'Rotana', serif; font-weight: normal; }
   .font-minerva-it { font-family: 'Rotana', serif; color: var(--white); font-style: normal; }
   .hero-tagline-text em { font-style: normal; color: var(--white); }
@@ -192,7 +192,7 @@
 
   @media (min-width: 768px) {
     .bottom-nav { display: none; }
-    .content { padding-bottom: 2rem; }
+    .content { padding-bottom: 5.5rem; }
     .hero { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAADICAIAAACRXdEPAAAFeUlEQVR4nO3dQQ3DQBAEwYu1XEI7EMJwDcIPq6UqBH6f2rOf7+9/AAAAAMpmd9/+BgAAAIBH5njgAAAAAOKutz8AAAAA4CkFBwAAAJCn4AAAAADyFBwAAABA3njeAAAAAOoUHAAAAECeDQ4AAAAgT8EBAAAA5Ck4AAAAgDwFBwAAAJDnigoAAACQp+AAAAAA8mxwAAAAAHkKDgAAACBPwQEAAADkKTgAAACAPFdUAAAAgDwFBwAAAJBngwMAAADIU3AAAAAAeQoOAAAAIE/BAQAAAOS5ogIAAADkKTgAAACAPBscAAAAQJ6CAwAAAMhTcAAAAAB5Cg4AAAAgT8EBAAAA5M0qOAAAAIA4BQcAAACQZ4MDAAAAyFNwAAAAAHkKDgAAACBPwQEAAADkuaICAAAA5Ck4AAAAgDwbHAAAAECeggMAAADIU3AAAAAAeQoOAAAAIM8VFQAAACBPwQEAAADk2eAAAAAA8hQcAAAAQJ6CAwAAAMhTcAAAAAB5rqgAAAAAeQoOAAAAIM8GBwAAAJCn4AAAAADyFBwAAABAnoIDAAAAyHNFBQAAAMhTcAAAAAB5NjgAAACAPAUHAAAAkKfgAAAAAPIUHAAAAECeggMAAADIG88bAAAAQJ2CAwAAAMizwQEAAADkKTgAAACAvDneNwAAAIC4OV44AAAAgLjxhwoAAABQp+AAAAAA8mxwAAAAAHkKDgAAACBPwQEAAADkKTgAAACAPFdUAAAAgDwFBwAAAJBngwMAAADIU3AAAAAAeQoOAAAAIE/BAQAAAOS5ogIAAADkKTgAAACAPBscAAAAQJ6CAwAAAMhTcAAAAAB5Cg4AAAAgT8EBAAAA5M164QAAAADiFBwAAABAng0OAAAAIE/BAQAAAOQpOAAAAIA8BQcAAACQ54oKAAAAkKfgAAAAAPJscAAAAAB5Cg4AAAAgT8EBAAAA5Ck4AAAAgDxXVAAAAIA8BQcAAACQZ4MDAAAAyFNwAAAAAHkKDgAAACBPwQEAAADkuaICAAAA5Ck4AAAAgDwbHAAAAECeggMAAADIU3AAAAAAeQoOAAAAIM8VFQAAACBPwQEAAADk2eAAAAAA8hQcAAAAQJ6CAwAAAMhTcAAAAAB5Cg4AAAAgb9b7BgAAABCn4AAAAADybHAAAAAAeQoOAAAAIE/BAQAAAOQpOAAAAIA8V1QAAACAPAUHAAAAkGeDAwAAAMhTcAAAAAB5Cg4AAAAgT8EBAAAA5LmiAgAAAOQpOAAAAIA8GxwAAABA3hz/qAAAAABx19sfAAAAAPCUggMAAADIG88bAAAAQJ2CAwAAAMizwQEAAADkKTgAAACAPAUHAAAAkKfgAAAAAPIUHAAAAEDerIIDAAAAiFNwAAAAAHk2OAAAAIA8BQcAAACQp+AAAAAA8hQcAAAAQJ4rKgAAAECeggMAAADIs8EBAAAA5Ck4AAAAgDwFBwAAAJCn4AAAAADyXFEBAAAA8hQcAAAAQJ4NDgAAACBPwQEAAADkKTgAAACAPAUHAAAAkOeKCgAAAJCn4AAAAADybHAAAAAAeQoOAAAAIE/BAQAAAOQpOAAAAIA8V1QAAACAPAUHAAAAkGeDAwAAAMhTcAAAAAB5Cg4AAAAgT8EBAAAA5Ck4AAAAgLzxvAEAAADUKTgAAACAPBscAAAAQJ6CAwAAAMhTcAAAAAB5Cg4AAAAgzxUVAAAAIE/BAQAAAOTZ4AAAAADyFBwAAABAnoIDAAAAyFNwAAAAAHmuqAAAAAB5Cg4AAAAgzwYHAAAAkKfgAAAAAPIUHAAAAECeggMAAADIc0UFAAAAyFNwAAAAAHk2OAAAAIA8BQcAAACQp+AAAAAA8hQcAAAAQJ6CAwAAAMi7ARM67D4BjWgaAAAAAElFTkSuQmCC'); background-size: cover; background-position: center; padding: 1.5rem 1.5rem 0; position: relative; overflow: hidden; }
     .content { padding-left: 2.5rem; padding-right: 2.5rem; }
   }
@@ -265,6 +265,12 @@
   .match-datetime { text-align: right; }
   .match-date { font-size: 12px; font-weight: 500; color: #073B4C; }
   .match-time { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+  .card-hours { font-size: 11px; color: var(--text-light); margin-top: 2px; margin-bottom: 2px; }
+
+  .social-bar { display: flex; align-items: center; justify-content: center; gap: .625rem; padding: 1.5rem 1rem 1rem; }
+  .social-btn { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #073B4C; color: rgba(255,255,255,.85); transition: background .2s, transform .15s; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+  .social-btn:hover { background: #0F5F73; color: #fff; transform: scale(1.08); }
+  .social-btn svg { width: 15px; height: 15px; }
 </style>
 </head>
 <body>
@@ -293,6 +299,7 @@
   </div>
 </div>
 
+
 <div class="content">
   <div id="dining"        class="section active"></div>
   <div id="offers"        class="section"></div>
@@ -314,7 +321,7 @@
 </div>
 
 <script>
-const SHEET_ID = '1vjIGBzpVH8yjkdTcKRH1odlJqQP6pDUQ4YPgeWiIwao';
+const SHEET_ID = '1uLpxkT-yZpIpqgVrihxN_LdXbYeKbrbrMnm8CNBUmyA';
 
 const SHEET_TABS = {
   dining:        'Dining',
@@ -340,18 +347,42 @@ function show(id, idx) {
 function parseCSV(text) {
   const lines = text.trim().split('\n').map(l => l.trim()).filter(Boolean);
   if (lines.length < 2) return [];
-  const headers = lines[0].split(',').map(h => h.replace(/^"|"$/g, '').trim());
-  return lines.slice(1).map(line => {
+
+  // Quote-aware line splitter — handles commas inside double quotes
+  function splitLine(line) {
     const vals = [];
     let cur = '', inQ = false;
     for (let i = 0; i < line.length; i++) {
       const ch = line[i];
       if (ch === '"') { inQ = !inQ; }
-      else if (ch === ',' && !inQ) { vals.push(cur.trim()); cur = ''; }
+      else if (ch === ',' && !inQ) { vals.push(cur.replace(/^"|"$/g,'').trim()); cur = ''; }
       else { cur += ch; }
     }
-    vals.push(cur.trim());
-    return Object.fromEntries(headers.map((h, i) => [h, (vals[i] || '').replace(/^"|"$/g, '')]));
+    vals.push(cur.replace(/^"|"$/g,'').trim());
+    return vals;
+  }
+
+  // Count non-empty columns
+  function countCols(line) { return splitLine(line).filter(Boolean).length; }
+
+  // Auto-skip instruction rows (fewer columns than next row)
+  let headerIdx = 0;
+  if (lines.length > 1 && countCols(lines[1]) > countCols(lines[0]) + 1) headerIdx = 1;
+
+  // Parse headers using quote-aware splitter
+  let headers = splitLine(lines[headerIdx]);
+
+  // Fix Packages merged-cell key: "Restaurant    Cinnamon" -> "Restaurant"
+  headers = headers.map(function(h) {
+    if (h.length > 10 && h.replace(/\s+/g,' ').slice(0,10) === 'Restaurant') return 'Restaurant';
+    return h;
+  });
+
+  return lines.slice(headerIdx + 1).map(function(line) {
+    const vals = splitLine(line);
+    const obj = {};
+    headers.forEach(function(h, i) { if (h) obj[h] = vals[i] || ''; });
+    return obj;
   });
 }
 
@@ -365,99 +396,257 @@ async function fetchSheet(tabName) {
 }
 
 function renderDining(rows) {
-  var lastOutlet = '', lastType = '', lastPill = '', lastPillStyle = '', lastStatus = '';
+  // Columns: Restaurant | Status | Operating Hours (optional) | Meal Period | Time | Description (or Notes)
+  var lastRest = '', lastStatus = 'Open', lastHours = '';
+
+  // Find the Operating Hours column name flexibly (handles variations in naming)
+  var hoursColName = '';
+  if (rows.length > 0) {
+    Object.keys(rows[0]).forEach(function(k) {
+      var kl = k.toLowerCase();
+      if (kl.indexOf('hour') !== -1 || kl.indexOf('operating') !== -1) hoursColName = k;
+    });
+  }
+  console.log('[DEBUG dining] Hours column found:', hoursColName || 'NONE', '| All columns:', Object.keys(rows[0]||{}).join(', '));
+
   rows = rows.map(function(r) {
-    if ((r['Outlet'] || '').trim() !== '') {
-      lastOutlet    = r['Outlet'].trim();
-      lastType      = (r['Type'] || '').trim();
-      lastPill      = (r['Pill'] || '').trim();
-      lastPillStyle = (r['PillStyle'] || '').trim();
-      lastStatus    = (r['Status'] || 'Open').trim();
-    }
-    return { Outlet: lastOutlet, Type: lastType, Pill: lastPill, PillStyle: lastPillStyle, Label: (r['Label'] || '').trim(), Value: (r['Value'] || '').trim(), Status: lastStatus };
+    var rest   = String(r['Restaurant']||'').trim();
+    var status = String(r['Status']||'').trim();
+    var hours  = String(r[hoursColName]||r['Operating Hours']||r['Operating hours']||r['Hours']||'').trim();
+    if (rest)   lastRest   = rest;
+    if (status) lastStatus = status;
+    if (hours)  lastHours  = hours;
+    return {
+      rest:   lastRest,
+      status: lastStatus,
+      hours:  lastHours,
+      meal:   String(r['Meal Period / Service']||r['Meal Period']||'').trim(),
+      time:   String(r['Timing']||r['Time']||'').trim(),
+      notes:  String(r['Notes']||r['Description']||'').trim()
+    };
   });
-  rows = rows.filter(function(r) { return r.Status.toUpperCase() !== 'CLOSED'; });
-  var outlets = {}, order = [];
+
+  rows = rows.filter(function(r) {
+    return r.rest && r.meal && r.status.toUpperCase() !== 'CLOSED'
+      && r.meal.indexOf('add details') === -1;
+  });
+
+  // Group by restaurant
+  var groups = {}, order = [];
   rows.forEach(function(r) {
-    if (!r.Outlet || !r.Label) return;
-    if (!outlets[r.Outlet]) { outlets[r.Outlet] = { type: r.Type, pill: r.Pill, pillStyle: r.PillStyle || 'pill-gold', rows: [] }; order.push(r.Outlet); }
-    outlets[r.Outlet].rows.push({ label: r.Label, value: r.Value });
+    if (!groups[r.rest]) { groups[r.rest] = { hours: r.hours, items: [] }; order.push(r.rest); }
+    if (r.hours && !groups[r.rest].hours) groups[r.rest].hours = r.hours;
+    groups[r.rest].items.push(r);
   });
-  var DINING_LINKS = {
-  'Basilico': 'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
-  'Cinnamon': 'https://www.rotana.com/thecoverotanaresort/dining/cinnamonalldaydining',
-  'Breeze': 'https://www.rotana.com/thecoverotanaresort/dining/breeze',
-  'Breakers': 'https://www.rotana.com/thecoverotanaresort/dining/breakersonthebeach',
-  'Sunset Bar': 'https://www.rotana.com/thecoverotanaresort/dining/sunsetbar',
-  'Laguna Bay': 'https://www.rotana.com/thecoverotanaresort/dining/lagunabay'
+
+  // Sort each restaurant's items by start time ascending
+  function parseStartTime(str) {
+    str = String(str||'').split('–')[0].split('-')[0].trim();
+    var m = str.match(/(\d+):(\d+)\s*(AM|PM)/i);
+    if (!m) return 9999;
+    var h = parseInt(m[1]), min = parseInt(m[2]), ampm = m[3].toUpperCase();
+    if (ampm === 'AM' && h === 12) h = 0;
+    if (ampm === 'PM' && h !== 12) h += 12;
+    return h * 60 + min;
+  }
+  order.forEach(function(name) {
+    groups[name].items.sort(function(a, b) { return parseStartTime(a.time) - parseStartTime(b.time); });
+  });
+
+  var LINKS = {
+    'Basilico':    'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/diningout/basilicomediterraneanrestaurant',
+    'Cinnamon':    'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Breeze':      'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Breakers':    'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Sunset Bar':  'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Laguna Bay':  'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'The Lounge':  'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Veranda':     'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'The Swing':   'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Chit Chat':   'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining',
+    'Room Service':'https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort/dining'
   };
+
+  if (!order.length) return '<div class="sec-head">Dining &amp; Bars</div><div class="error-box"><div class="error-sub">No outlets currently open.</div></div>';
+
   var cards = order.map(function(name) {
-    var o = outlets[name];
-    var link = DINING_LINKS[name];
-    var tag = link ? 'a class="card clickable" href="' + link + '" target="_blank" rel="noopener"' : 'div class="card"';
-    var closeTag = link ? 'a' : 'div';
-    var extIcon = link ? '<span class="ext-icon">↗</span>' : '';
-    return '<' + tag + '><div class="card-header"><div><div class="card-name card-name-link">' + name + extIcon + '</div><div class="card-type">' + o.type + '</div></div>' + (o.pill ? '<span class="pill ' + o.pillStyle + '">' + o.pill + '</span>' : '') + '</div><div class="time-rows">' + o.rows.map(function(r) { return '<div class="time-row"><span class="time-label">' + r.label + '</span><span class="time-val">' + r.value + '</span></div>'; }).join('') + '</div></' + closeTag + '>';
+    var g    = groups[name];
+    var link = LINKS[name] || '';
+    var tag  = link ? 'a class="card clickable" href="'+link+'" target="_blank" rel="noopener"' : 'div class="card"';
+    var cls  = link ? 'a' : 'div';
+    var arrow = link ? '<span class="ext-icon">&#8599;</span>' : '';
+
+    var hoursHtml = g.hours
+      ? '<div class="card-hours">'+g.hours+'</div>'
+      : '';
+
+    var timeRows = g.items.map(function(r) {
+      var note = r.notes ? '<span class="time-note"> &#8212; '+r.notes+'</span>' : '';
+      return '<div class="time-row">'
+        +'<span class="time-label">'+r.meal+'</span>'
+        +'<span class="time-val">'+r.time+note+'</span>'
+        +'</div>';
+    }).join('');
+
+    return '<'+tag+'>'
+      +'<div class="card-header"><div>'
+      +'<div class="card-name card-name-link">'+name+arrow+'</div>'
+      +hoursHtml
+      +'</div></div>'
+      +'<div class="time-rows">'+timeRows+'</div>'
+      +'</'+cls+'>';
   }).join('');
-  return '<div class="sec-head">Dining &amp; Bars</div><div class="card-grid">' + cards + '</div>';
+
+  return '<div class="sec-head">Dining &amp; Bars</div><div class="card-grid">'+cards+'</div>';
 }
+
 function renderOffers(rows) {
+  var COLS = ['Icon','Title','Detail','Time','Price','Link'];
+  if (rows.length > 0) {
+    var keys = Object.keys(rows[0]);
+    // If none of the expected column names exist as keys, use positional mapping
+    var hasProperCols = COLS.some(function(c) { return keys.indexOf(c) !== -1; });
+    if (!hasProperCols) {
+      // Current headers (keys) are actually the first offer's data
+      // Reconstruct all offers using positional column order
+      var allOffers = [keys].concat(rows.map(function(r) { return Object.values(r); }));
+      rows = allOffers.map(function(vals) {
+        var n = {};
+        COLS.forEach(function(col, i) { n[col] = String(vals[i] || '').trim(); });
+        return n;
+      });
+    }
+  }
+
+  var offerRows = rows.filter(function(r) { return String(r['Title']||'').trim(); });
+  if (!offerRows.length) return '<div class="sec-head">Exclusive Offers</div><div class="error-box"><div class="error-sub">No offers available at this time.</div></div>';
+
   return '<div class="sec-head">Exclusive Offers</div>'
-    + rows.filter(function(r) { return r.Title; }).map(function(r) {
-        var link = (r.Link || '').trim();
-        var tag  = link ? 'a class="offer-card offer-card-link" href="' + link + '" target="_blank" rel="noopener"' : 'div class="offer-card"';
-        var closeTag = link ? 'a' : 'div';
-        var arrow = link ? '<div class="offer-arrow">&#8599;</div>' : '';
-        return '<' + tag + '>'
-          + '<div class="offer-icon">' + (r.Icon || '🎁') + '</div>'
-          + '<div style="flex:1">'
-          + '<div class="offer-title">' + r.Title + '</div>'
-          + '<div class="offer-detail">' + (r.Detail || '') + '</div>'
-          + (r.Time  ? '<div class="offer-detail" style="margin-top:4px">' + r.Time + '</div>' : '')
-          + (r.Price ? '<span class="offer-price">' + r.Price + '</span>' : '')
-          + '</div>'
-          + arrow
-          + '</' + closeTag + '>';
+    + offerRows.map(function(r) {
+        var link = String(r['Link']||'').trim();
+        var tag  = link ? 'a class="offer-card offer-card-link" href="'+link+'" target="_blank" rel="noopener"' : 'div class="offer-card"';
+        var cls  = link ? 'a' : 'div';
+        return '<'+tag+'>'
+          +'<div class="offer-icon">'+String(r['Icon']||'&#127873;')+'</div>'
+          +'<div style="flex:1">'
+          +'<div class="offer-title">'+String(r['Title']||'')+'</div>'
+          +'<div class="offer-detail">'+String(r['Detail']||'')+'</div>'
+          +(r['Time']  ? '<div class="offer-detail" style="margin-top:4px">'+r['Time']+'</div>' : '')
+          +(r['Price'] ? '<span class="offer-price">'+r['Price']+'</span>' : '')
+          +'</div>'
+          +(link ? '<div class="offer-arrow">&#8599;</div>' : '')
+          +'</'+cls+'>';
       }).join('');
 }
 
 function renderPackages(rows) {
-  var closedRestaurants = {};
+  // Detect info/note rows (Restaurant column starts with bullet)
+  var infoRows = rows.filter(function(r) {
+    return String(r['Restaurant']||'').trim().charAt(0) === '•';
+  });
+
+  // Build status map with fill-down
+  var lastR = '', statusMap = {};
   rows.forEach(function(r) {
-    var rest = (r['Restaurant'] || '').trim();
-    var status = (r['Status'] || 'Open').trim().toUpperCase();
-    if (rest && status === 'CLOSED') closedRestaurants[rest] = true;
+    var rest = String(r['Restaurant']||'').trim();
+    var st   = String(r['Status']||'').trim();
+    if (rest && rest.charAt(0) !== '•') lastR = rest;
+    if (st && lastR) statusMap[lastR] = st;
   });
-  var dataRows = rows.filter(function(r) {
-    var rest = (r['Restaurant'] || '').trim();
-    return rest !== '' && (r['Meal Period'] || '').trim() !== '' && !closedRestaurants[rest];
+  var closed = {};
+  Object.keys(statusMap).forEach(function(k) {
+    if (statusMap[k].toUpperCase() === 'CLOSED') closed[k] = true;
   });
-  var infoRows = rows.filter(function(r) { return (r['Restaurant'] || '').toString().trim().charAt(0) === '•'; });
-  var restaurants = [], seen = {};
-  dataRows.forEach(function(r) { var name = (r['Restaurant'] || '').trim(); if (name && !seen[name]) { seen[name] = true; restaurants.push(name); } });
-  function renderCell(val) {
-    val = (val || '').trim();
-    if (!val || val.toUpperCase() === 'FALSE') return '<td class="pkg-cross">—</td>';
-    if (val.toUpperCase() === 'TRUE') return '<td class="pkg-check">✓</td>';
-    if (val.toUpperCase() === 'CHARGEABLE') return '<td class="pkg-charge">Chargeable</td>';
-    return '<td class="pkg-custom"><span>' + val + '</span></td>';
+
+  // Fill-down and collect data rows (including Operating Hours)
+  lastR = '';
+  var lastHours = '';
+  var hoursMap = {};
+  var dataRows = [];
+  rows.forEach(function(r) {
+    var rest  = String(r['Restaurant']||'').trim();
+    var hours = String(r['Operating Hours']||r['Hours']||'').trim();
+    var meal  = String(r['Meal Period']||r['Meal Period / Service']||'').trim();
+    if (rest && rest.charAt(0) !== '•') lastR = rest;
+    if (hours) { lastHours = hours; hoursMap[lastR] = hours; }
+    if (!lastR || !meal || closed[lastR] || meal.indexOf('add details') !== -1) return;
+    dataRows.push({
+      rest: lastR, meal: meal,
+      time: String(r['Time']||r['Timing']||'').trim(),
+      desc: String(r['Description']||r['Notes']||'').trim(),
+      ai:   String(r['AI']||'').trim(),
+      uai:  String(r['UAI']||'').trim()
+    });
+  });
+
+  // Sort each restaurant's rows by start time ascending
+  function parseStartTime(str) {
+    str = String(str||'').split('–')[0].split('-')[0].trim();
+    var m = str.match(/(\d+):(\d+)\s*(AM|PM)/i);
+    if (!m) return 9999;
+    var h = parseInt(m[1]), min = parseInt(m[2]), ampm = m[3].toUpperCase();
+    if (ampm === 'AM' && h === 12) h = 0;
+    if (ampm === 'PM' && h !== 12) h += 12;
+    return h * 60 + min;
   }
-  var tableRows = restaurants.map(function(name) {
-    var group = dataRows.filter(function(r) { return (r['Restaurant'] || '').trim() === name; });
-    var hours = (group[0]['Operating Hours'] || '').trim();
-    var restRow = '<tr class="pkg-restaurant-row"><td class="pkg-col-sticky"><strong>' + name + '</strong>' + (hours ? '<div class="pkg-hours">' + hours + '</div>' : '') + '</td><td colspan="4"></td></tr>';
-    var dataHtml = group.map(function(r) { return '<tr><td class="pkg-col-sticky pkg-meal">' + (r['Meal Period'] || '').trim() + '</td><td class="pkg-time">' + (r['Time'] || '').trim() + '</td><td class="pkg-desc">' + (r['Description'] || '').trim() + '</td>' + renderCell((r['AI'] || '').trim()) + renderCell((r['UAI'] || '').trim()) + '</tr>'; }).join('');
-    return restRow + dataHtml;
+
+  var restaurants = [], seen = {};
+  dataRows.forEach(function(r) { if (!seen[r.rest]) { seen[r.rest]=true; restaurants.push(r.rest); } });
+
+  restaurants.forEach(function(name) {
+    var group = dataRows.filter(function(r){return r.rest===name;});
+    group.sort(function(a,b){ return parseStartTime(a.time) - parseStartTime(b.time); });
+    var idx = 0;
+    dataRows = dataRows.map(function(r) {
+      if (r.rest === name) { var s = group[idx++]; return s; }
+      return r;
+    });
+  });
+
+  if (!restaurants.length) return '<div class="sec-head">Meal Packages</div><div class="error-box"><div class="error-sub">No packages currently available.</div></div>';
+
+  function rc(v) {
+    v = String(v||'').trim().toUpperCase();
+    if (!v || v==='FALSE') return '<td class="pkg-cross">&#8212;</td>';
+    if (v==='TRUE')         return '<td class="pkg-check">&#10003;</td>';
+    if (v==='CHARGEABLE')   return '<td class="pkg-charge">CHARGED</td>';
+    return '<td class="pkg-custom"><span>'+v+'</span></td>';
+  }
+
+  var tbody = restaurants.map(function(name) {
+    var g = dataRows.filter(function(r){return r.rest===name;});
+    var hrs = hoursMap[name] ? '<div class="pkg-hours">'+hoursMap[name]+'</div>' : '';
+    return '<tr class="pkg-restaurant-row"><td class="pkg-col-sticky" style="color:#073B4C"><strong>'+name+'</strong>'+hrs+'</td><td colspan="4"></td></tr>'
+      + g.map(function(r){
+          return '<tr><td class="pkg-col-sticky pkg-meal">'+r.meal+'</td><td class="pkg-time">'+r.time+'</td><td class="pkg-desc">'+r.desc+'</td>'+rc(r.ai)+rc(r.uai)+'</tr>';
+        }).join('');
   }).join('');
-  var infoHtml = infoRows.length ? '<div class="pkg-info-box"><div class="pkg-info-title">⚠️ Important Information</div>' + infoRows.map(function(r) { return '<div class="pkg-info-item">' + (r['Restaurant'] || '').trim().replace(/^• */, '') + '</div>'; }).join('') + '</div>' : '';
+
+  // Important notes info box
+  var infoHtml = '';
+  if (infoRows.length) {
+    infoHtml = '<div class="pkg-info-box">'
+      + '<div class="pkg-info-title">&#9888;&#65039; Important Information</div>'
+      + infoRows.map(function(r) {
+          return '<div class="pkg-info-item">'+String(r['Restaurant']||'').trim().replace(/^•\s*/,'')+'</div>';
+        }).join('')
+      + '</div>';
+  }
+
   return '<div class="sec-head">Meal Packages</div>'
-    + '<div style="background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);margin-bottom:.875rem;overflow:hidden">'
-    + '<div id="pkgHint" style="display:flex;align-items:center;justify-content:flex-end;gap:5px;font-size:11px;color:var(--text-light);padding:5px 12px;background:var(--sand);border-bottom:1px solid var(--sand-dark);transition:opacity 0.3s">Slide for more <span style="display:inline-block;animation:pkgnudge 1.2s ease-in-out infinite">&#8250;&#8250;</span></div>'
-    + '<div id="pkgScroll" onscroll="pkgScroll(this)" style="overflow-x:auto;-webkit-overflow-scrolling:touch">'
-    + '<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:520px;background:var(--white)">'
-    + '<thead><tr style="background:#073B4C"><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap;position:sticky;left:0;z-index:3;background:#073B4C;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th><th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left">Description</th><th style="padding:.65rem .875rem;font-weight:600;font-size:12px;text-align:center;background:linear-gradient(135deg,#8a9099,#BCC2C8,#E2E6EA,#BCC2C8,#8a9099);color:#2a2a2a;min-width:60px">AI</th><th style="padding:.65rem .875rem;font-weight:600;font-size:12px;text-align:center;background:linear-gradient(135deg,#B8860B,#DAA520,#F0D060,#DAA520,#B8860B);color:#5a3d00;min-width:60px">UAI</th></tr></thead>'
-    + '<tbody>' + tableRows + '</tbody></table></div></div>' + infoHtml;
+    +'<div style="background:var(--white);border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:.875rem;overflow:hidden">'
+    +'<div style="font-size:11px;color:var(--text-light);padding:5px 12px;text-align:right;background:var(--sand);border-bottom:1px solid var(--sand-dark)">Slide for more &#187;</div>'
+    +'<div id="pkgScrollWrap" onscroll="pkgScroll(this)" style="overflow-x:auto;-webkit-overflow-scrolling:touch">'
+    +'<table style="width:100%;border-collapse:collapse;font-size:13px;min-width:520px;background:var(--white)">'
+    +'<thead><tr style="background:#073B4C">'
+    +'<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;position:sticky;left:0;z-index:3;background:#073B4C;min-width:130px;border-right:2px solid rgba(255,255,255,.2)">Meal Period</th>'
+    +'<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px;text-align:left;white-space:nowrap">Time</th>'
+    +'<th style="padding:.65rem .875rem;color:#fff;font-weight:500;font-size:12px">Description</th>'
+    +'<th style="padding:.65rem .875rem;font-weight:600;font-size:12px;text-align:center;background:linear-gradient(135deg,#8a9099,#BCC2C8,#E2E6EA,#BCC2C8,#8a9099);color:#2a2a2a;min-width:60px">AI</th>'
+    +'<th style="padding:.65rem .875rem;font-weight:600;font-size:12px;text-align:center;background:linear-gradient(135deg,#B8860B,#DAA520,#F0D060,#DAA520,#B8860B);color:#5a3d00;min-width:60px">UAI</th>'
+    +'</tr></thead><tbody>'+tbody+'</tbody></table></div></div>'+infoHtml;
 }
+
 function pkgScroll(el) { var hint = document.getElementById('pkgHint'); if (hint) hint.style.opacity = el.scrollLeft > 20 ? '0' : '1'; }
 function renderActivities(rows) {
   return `<div class="sec-head">Daily Activities</div>
@@ -571,14 +760,18 @@ const renderers = {
 
 async function loadSection(key) {
   const el = document.getElementById(key);
-  if (!el || el.dataset.loaded) return;
+  if (!el) return;
   showLoading(key);
   try {
     const rows = await fetchSheet(SHEET_TABS[key]);
-    el.innerHTML = renderers[key](rows);
-    el.dataset.loaded = '1';
+    console.log('[DEBUG ' + key + '] rows:', rows.length, JSON.stringify(rows[0] || {}));
+    const socialBar = '<div class=\"social-bar\"><a class=\"social-btn\" href=\"https://www.instagram.com/thecoverotanaresort/\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"width:15px;height:15px\"><path d=\"M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z\"/></svg></a><a class=\"social-btn\" href=\"https://www.facebook.com/thecoverotanaresort\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"width:15px;height:15px\"><path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"/></svg></a><a class=\"social-btn\" href=\"https://www.linkedin.com/company/the-cove-rotana-resort/\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"width:15px;height:15px\"><path d=\"M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z\"/></svg></a><a class=\"social-btn\" href=\"https://www.tiktok.com/@thecoverotanaresort\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"width:15px;height:15px\"><path d=\"M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z\"/></svg></a><a class=\"social-btn\" href=\"https://www.rotana.com/rotanahotelandresorts/unitedarabemirates/rasalkhaimah/thecoverotanaresort\" target=\"_blank\" rel=\"noopener\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"width:15px;height:15px\"><path d=\"M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 21.945A10.01 10.01 0 012.055 13H5.1a16.7 16.7 0 001.406 5.608A10.05 10.05 0 0111 21.945zm0-10.945H2.055A10.01 10.01 0 0111 2.055V11zm2 0V2.055A10.01 10.01 0 0121.945 11H13zm0 2h8.945A10.01 10.01 0 0113 21.945V13zm-2 8.945A10.05 10.05 0 017.494 18.608 14.7 14.7 0 016.1 13H11v8.945zm6.506-3.337A10.05 10.05 0 0113 21.945V13h4.9a14.7 14.7 0 01-1.394 5.608z\"/></svg></a></div>';
+    const html = renderers[key](rows) + socialBar;
+    console.log('[DEBUG ' + key + '] html length:', html.length);
+    el.innerHTML = html;
   } catch(e) {
-    showError(key, 'Check sheet is published publicly.<br><small>' + e.message + '</small>');
+    console.error('[DEBUG ' + key + '] ERROR:', e.message);
+    showError(key, 'Error loading ' + key + ': ' + e.message);
   }
 }
 
