@@ -576,6 +576,7 @@ function renderPackages(rows) {
     var meal  = String(r['Meal Period']||r['Meal Period / Service']||'').trim();
     if (rest && rest.charAt(0) !== '•') lastR = rest;
     if (hours) { lastHours = hours; hoursMap[lastR] = hours; }
+    console.log('[PKG DEBUG] rest=' + JSON.stringify(lastR) + ' meal=' + JSON.stringify(meal) + ' closed=' + !!closed[lastR] + ' AI=' + JSON.stringify(r['AI']) + ' UAI=' + JSON.stringify(r['UAI']));
     if (!lastR || !meal || closed[lastR] || meal.indexOf('add details') !== -1) return;
     dataRows.push({
       rest: lastR, meal: meal,
