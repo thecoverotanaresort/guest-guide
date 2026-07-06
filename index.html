@@ -612,11 +612,11 @@ function renderPackages(rows) {
 
   if (!restaurants.length) return '<div class="sec-head">Meal Packages</div><div class="error-box"><div class="error-sub">No packages currently available.</div></div>';
 
-  function rc(v) {
+function rc(v) {
     v = String(v||'').trim().toUpperCase();
     if (!v || v==='FALSE') return '<td class="pkg-cross">&#8212;</td>';
     if (v==='TRUE')         return '<td class="pkg-check">&#10003;</td>';
-    if (v==='CHARG')   return '<td class="pkg-charge">Chargeable</td>';
+    if (v==='CHARGEABLE')   return '<td class="pkg-charge">Chargeable</td>';
     return '<td class="pkg-custom"><span>'+v+'</span></td>';
   }
 
