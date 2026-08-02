@@ -535,9 +535,9 @@ function renderOffers(rows) {
   }
 
   var offerRows = rows.filter(function(r) { return String(r['Title']||'').trim(); });
-  if (!offerRows.length) return '<div class="sec-head">Exclusive Offers</div><div class="error-box"><div class="error-sub">No offers available at this time.</div></div>';
+  if (!offerRows.length) return '<div class="sec-head">Offers</div><div class="error-box"><div class="error-sub">No offers available at this time.</div></div>';
 
-  return '<div class="sec-head">Exclusive Offers</div>'
+  return '<div class="sec-head">Offers</div>'
     + offerRows.map(function(r) {
         var link = String(r['Link']||'').trim();
         var tag  = link ? 'a class="offer-card offer-card-link" href="'+link+'" target="_blank" rel="noopener"' : 'div class="offer-card"';
