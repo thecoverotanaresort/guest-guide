@@ -328,6 +328,10 @@
 </div>
 
 <script>
+const CUSTOM_ICONS = {
+  'discovery': 'icons/discovery.png'
+};
+  
 const SHEET_ID = '1vjIGBzpVH8yjkdTcKRH1odlJqQP6pDUQ4YPgeWiIwao';
 
 const SHEET_TABS = {
@@ -539,7 +543,7 @@ function renderOffers(rows) {
         var tag  = link ? 'a class="offer-card offer-card-link" href="'+link+'" target="_blank" rel="noopener"' : 'div class="offer-card"';
         var cls  = link ? 'a' : 'div';
         return '<'+tag+'>'
-          +'<div class="offer-icon">'+String(r['Icon']||'&#127873;')+'</div>'
+          +'<div class="offer-icon">'+(function(ic){var key=(ic||'').toLowerCase().replace(/^img:/,'');return CUSTOM_ICONS[key]?'<img src="'+CUSTOM_ICONS[key]+'" style="width:100%;height:100%;object-fit:cover;border-radius:9px">':(ic||'&#127873;');})(String(r['Icon']||''))+'</div>'
           +'<div style="flex:1">'
           +'<div class="offer-title">'+String(r['Title']||'')+'</div>'
           +'<div class="offer-detail">'+String(r['Detail']||'')+'</div>'
